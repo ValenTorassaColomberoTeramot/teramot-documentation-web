@@ -41,8 +41,8 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
-          routeBasePath: '/docs',
+          sidebarPath: './sidebars-api.ts',
+          routeBasePath: '/api',
         },
         // ✅ mantené blog y theme si los usás
         blog: {
@@ -71,32 +71,10 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'api',
-        path: 'api',
-        routeBasePath: '/api',
-        sidebarPath: require.resolve('./sidebars-api.ts'),
-        // TODO: Update with actual repo URL when ready
-        // editUrl: 'https://github.com/teramot/teramot-documentation/tree/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'compliance',
         path: 'compliance',
         routeBasePath: '/compliance',
         sidebarPath: require.resolve('./sidebars-compliance.ts'),
-        // TODO: Update with actual repo URL when ready
-        // editUrl: 'https://github.com/teramot/teramot-documentation/tree/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'products',
-        path: 'products',
-        routeBasePath: '/products',
-        sidebarPath: require.resolve('./sidebars-products.ts'),
         // TODO: Update with actual repo URL when ready
         // editUrl: 'https://github.com/teramot/teramot-documentation/tree/main/',
       },
@@ -129,7 +107,6 @@ const config: Config = {
           sidebarId: 'apiSidebar',
           position: 'left',
           label: 'API',
-          docsPluginId: 'api',
         },
         {
           type: 'docSidebar',
@@ -137,13 +114,6 @@ const config: Config = {
           position: 'left',
           label: 'Compliance',
           docsPluginId: 'compliance',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'productsSidebar',
-          position: 'left',
-          label: 'Products',
-          docsPluginId: 'products',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -202,7 +172,7 @@ const config: Config = {
           items: [
             {
               label: 'About Teramot',
-              to: '/about',
+              to: '/compliance/about',
             },
             {
               label: 'Contact',
