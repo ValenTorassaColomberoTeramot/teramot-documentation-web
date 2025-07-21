@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Teramot Documentation',
   tagline: 'Technical documentation, compliance materials, and product updates for Teramot',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon-teramot.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -99,7 +99,7 @@ const config: Config = {
       title: 'Teramot Docs',
       logo: {
         alt: 'Teramot Logo',
-        src: 'img/teramot-logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {

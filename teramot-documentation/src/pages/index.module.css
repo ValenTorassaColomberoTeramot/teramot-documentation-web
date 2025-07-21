@@ -1,23 +1,107 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .heroBanner {
-  padding: 4rem 0;
+  padding: 5rem 1rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.hero__title {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .buttons {
   display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.featureSection {
+  padding: 5rem 1rem;
+  background-color: var(--ifm-background-color);
+}
+
+.featureSection .container {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+.featureSectionReverse .container {
+  flex-direction: row-reverse;
+}
+
+.featureImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featureImage img {
+  width: 100%;
+  max-width: 380px;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent; 
+  padding: 0; 
+}
+
+.featureTitle {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.featureContent {
+  flex: 1;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.featureContent p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.button--primary {
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 996px) {
+  .featureSection .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .featureSectionReverse .container {
+    flex-direction: column;
+  }
+
+  .featureContent {
+    max-width: 100%;
+  }
+
+  .featureImage img {
+    max-width: 260px;
+  }
 }
