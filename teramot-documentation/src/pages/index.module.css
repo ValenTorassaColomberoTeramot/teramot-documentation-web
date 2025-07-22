@@ -105,3 +105,43 @@
     max-width: 260px;
   }
 }
+
+
+.logoWrapper {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.logoImage {
+  height: auto;
+  max-width: 320px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.02); /* efecto sutil al pasar el mouse */
+}
+
+@media screen and (min-width: 768px) {
+  .logoImage {
+    max-width: 480px;
+  }
+}
+
+.logoImageLight {
+  display: block;
+}
+
+[data-theme='dark'] .logoImageLight {
+  display: none;
+}
+
+.logoImageDark {
+  display: none;
+}
+
+[data-theme='dark'] .logoImageDark {
+  display: block;
+}

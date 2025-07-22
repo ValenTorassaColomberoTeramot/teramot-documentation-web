@@ -12,8 +12,20 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          Welcome to Teramot Documentation
+          Welcome to Our Documentation
         </Heading>
+        <div className={styles.logoWrapper}>
+          <img
+            src="/img/logo-dark.png"
+            className={clsx(styles.logoImage, styles.logoImageLight)}
+            alt="Teramot Logo dark"
+          />
+          <img
+            src="/img/logo-light.png"
+            className={clsx(styles.logoImage, styles.logoImageDark)}
+            alt="Teramot Logo light"
+          />
+        </div>
         <p className="hero__subtitle">
           Technical docs, compliance, AI API integration, product updates, and service status.
         </p>
