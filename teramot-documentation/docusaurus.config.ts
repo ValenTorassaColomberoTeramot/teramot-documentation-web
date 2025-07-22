@@ -41,7 +41,7 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars-api.ts',
+          sidebarPath: './sidebars.ts',
           routeBasePath: '/api',
         },
         // ✅ mantené blog y theme si los usás
@@ -52,8 +52,8 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          blogTitle: 'Teramot Developer Blog',
-          blogDescription: 'Technical articles, internal tools, and development updates',
+          blogTitle: 'Product Updates',
+          blogDescription: 'Latest product updates, feature releases, and platform improvements',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -71,10 +71,21 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'getting-started',
+        path: 'getting-started',
+        routeBasePath: '/getting-started',
+        sidebarPath: require.resolve('./sidebars.ts'),
+        // TODO: Update with actual repo URL when ready
+        // editUrl: 'https://github.com/teramot/teramot-documentation/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'compliance',
         path: 'compliance',
         routeBasePath: '/compliance',
-        sidebarPath: require.resolve('./sidebars-compliance.ts'),
+        sidebarPath: require.resolve('./sidebars.ts'),
         // TODO: Update with actual repo URL when ready
         // editUrl: 'https://github.com/teramot/teramot-documentation/tree/main/',
       },
@@ -85,7 +96,7 @@ const config: Config = {
         id: 'status',
         path: 'status',
         routeBasePath: '/status',
-        sidebarPath: require.resolve('./sidebars-status.ts'),
+        sidebarPath: require.resolve('./sidebars.ts'),
         // TODO: Update with actual repo URL when ready
         // editUrl: 'https://github.com/teramot/teramot-documentation/tree/main/',
       },
@@ -104,21 +115,28 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'apiSidebar',
+          sidebarId: 'gettingStarted',
+          position: 'left',
+          label: 'Getting Started',
+          docsPluginId: 'getting-started',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'api',
           position: 'left',
           label: 'API',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'complianceSidebar',
+          sidebarId: 'compliance',
           position: 'left',
           label: 'Compliance',
           docsPluginId: 'compliance',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/blog', label: 'Updates', position: 'left'},
         {
           type: 'docSidebar',
-          sidebarId: 'statusSidebar',
+          sidebarId: 'status',
           position: 'left',
           label: 'Status',
           docsPluginId: 'status',

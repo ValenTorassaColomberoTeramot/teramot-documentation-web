@@ -30,7 +30,7 @@ function HomepageHeader() {
           Technical docs, compliance, AI API integration, product updates, and service status.
         </p>
         <div className={styles.buttons}>
-          <Link className="button button--primary button--lg" to="/docs/intro">
+          <Link className="button button--primary button--lg" to="/getting-started">
             Get Started
           </Link>
           <Link className="button button--secondary button--lg" to="/api">
