@@ -46,7 +46,7 @@ const config: Config = {
         },
         // ✅ mantené blog y theme si los usás
         blog: {
-          routeBasePath: '/blog',
+          routeBasePath: '/updates',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -133,7 +133,7 @@ const config: Config = {
           label: 'Compliance',
           docsPluginId: 'compliance',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/updates', label: 'Updates', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'statusSidebar',
