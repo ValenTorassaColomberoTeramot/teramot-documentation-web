@@ -52,8 +52,8 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          blogTitle: 'Teramot Developer Blog',
-          blogDescription: 'Technical articles, internal tools, and development updates',
+          blogTitle: 'Product Updates',
+          blogDescription: 'Latest product updates, feature releases, and platform improvements',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -68,6 +68,17 @@ const config: Config = {
 
   // Multiple documentation sections
   plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'getting-started',
+        path: 'getting-started',
+        routeBasePath: '/getting-started',
+        sidebarPath: require.resolve('./sidebars-getting-started.ts'),
+        // TODO: Update with actual repo URL when ready
+        // editUrl: 'https://github.com/teramot/teramot-documentation/tree/main/',
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -102,6 +113,13 @@ const config: Config = {
         src: 'img/logo.png',
       },
       items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'gettingStartedSidebar',
+          position: 'left',
+          label: 'Getting Started',
+          docsPluginId: 'getting-started',
+        },
         {
           type: 'docSidebar',
           sidebarId: 'apiSidebar',

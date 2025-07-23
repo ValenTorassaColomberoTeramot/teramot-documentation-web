@@ -10,82 +10,130 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero', styles.heroBanner)}>
+      <div className={styles.heroBg} />
       <div className="container">
-        <Heading as="h1" className="hero__title">
+        <div className={styles.logoWrapper}>
+          <img
+            src="/img/logo-dark.png"
+            className={clsx(styles.logoImage, styles.logoImageLight)}
+            alt="Teramot Logo"
+          />
+          <img
+            src="/img/logo-light.png"
+            className={clsx(styles.logoImage, styles.logoImageDark)}
+            alt="Teramot Logo"
+          />
+        </div>
+        <Heading as="h1" className={styles.heroTitle}>
           Welcome to Teramot Documentation
         </Heading>
-        <p className="hero__subtitle">
-          Technical docs, compliance, AI API integration, product updates, and service status.
+        <p className={styles.heroSubtitle}>
+          Documentation, integration guides and API reference for scaling AI Agents with Teramot.
         </p>
-        <div className={styles.buttons}>
-          <Link className="button button--primary button--lg" to="/docs/intro">
+        <div className={styles.heroButtons}>
+          <Link className="button button--primary button--lg" to="/getting-started">
             Get Started
           </Link>
           <Link className="button button--secondary button--lg" to="/api">
             API Reference
           </Link>
-          <Link className="button button--secondary button--lg" to="/compliance">
-            Compliance
+          <Link className="button button--secondary button--lg" to="/products">
+            Product Updates
           </Link>
+
         </div>
       </div>
     </header>
   );
 }
 
-function FeatureSection({title, description, imageUrl, link, reverse = false}) {
+interface DocumentationSectionProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+  buttonText: string;
+  buttonLink: string;
+}
+
+function DocumentationSection({title, description, imageUrl, buttonText, buttonLink}: DocumentationSectionProps) {
   return (
-    <section className={clsx(styles.featureSection, reverse && styles.featureSectionReverse)}>
+    <div className={styles.docSection}>
+      <div className={styles.docSectionImage}>
+        <img src={imageUrl} alt={title} />
+      </div>
+      <div className={styles.docSectionContent}>
+        <Heading as="h3" className={styles.docSectionTitle}>{title}</Heading>
+        <p className={styles.docSectionDescription}>{description}</p>
+        <Link className="button button--primary" to={buttonLink}>
+          {buttonText}
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+function DocumentationSections() {
+  const sections: DocumentationSectionProps[] = [
+    {
+      title: "Getting Started",
+      description: "Start integrating your corporate data into Teramot Agents. Step-by-step tutorials for connecting AWS, building your medallion architecture, and unlocking the Gold Layer.",
+      imageUrl: "/img/Chat bot-pana.svg",
+      buttonText: "Go to Getting Started",
+      buttonLink: "/getting-started"
+    },
+    {
+      title: "API Reference",
+      description: "Full technical documentation for our AI Agent APIs. Query, operate and automate on the Gold Layer—securely, reliably, and at scale.",
+      imageUrl: "/img/Data extraction-rafiki.svg",
+      buttonText: "Go to API Reference",
+      buttonLink: "/api"
+    },
+    {
+      title: "Compliance",
+      description: "Access all compliance documentation: ISO 27001, SOC2, GDPR and more. Security standards, audit details, and best practices.",
+      imageUrl: "/img/Secure Server-cuate.svg",
+      buttonText: "Go to Compliance",
+      buttonLink: "/compliance"
+    },
+    {
+      title: "Product Updates",
+      description: "Read the latest changelogs, feature releases, and technical improvements across the Teramot platform.",
+      imageUrl: "/img/Business-Plan-amico.svg",
+      buttonText: "Go to Product Updates",
+      buttonLink: "/products"
+    },
+    {
+      title: "Service Status",
+      description: "Check real-time operational status for Teramot services, APIs and infrastructure.",
+      imageUrl: "/img/Data-extraction-bro.svg",
+      buttonText: "Go to Service Status",
+      buttonLink: "/status"
+    }
+  ];
+
+  return (
+    <section className={styles.docSections}>
       <div className="container">
-        <div className={styles.featureImage}>
-          <img src={imageUrl} alt={title} />
-        </div>
-        <div className={styles.featureContent}>
-          <Heading as="h2" className={styles.featureTitle}>{title}</Heading>
-          <p>{description}</p>
-          {link && (
-            <Link className="button button--primary" to={link}>Learn More</Link>
-          )}
+        <div className={styles.docSectionsGrid}>
+          {sections.map((section, idx) => (
+            <DocumentationSection key={idx} {...section} />
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
+
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Technical docs, compliance, AI API integration, product updates, and service status for Teramot">
+      description="Documentation, integration guides and API reference for scaling AI Agents with Teramot">
       <HomepageHeader />
       <main>
-        <FeatureSection
-          title="AI-Driven API"
-          description="Connect securely and efficiently to our AI-powered corporate data API."
-          imageUrl="img/Learning-pana.svg"
-          link="/api"
-        />
-        <FeatureSection
-          title="Security & Compliance"
-          description="Maintain compliance with comprehensive ISO 27001, SOC 2 documentation, and more."
-          imageUrl="img/Privacy-policy-bro.svg"
-          link="/compliance"
-          reverse
-        />
-        <FeatureSection
-          title="Real-Time Service Status"
-          description="Check the health and real-time status of our APIs and services instantly."
-          imageUrl="img/Data-extraction-bro.svg"
-          link="/status"
-        />
-        <FeatureSection
-          title="Developer Blog & Updates"
-          description="Stay informed with regular updates on product evolution and feature enhancements."
-          imageUrl="img/Business-Plan-amico.svg"
-          link="/blog"
-          reverse
-        />
+        <DocumentationSections />
       </main>
     </Layout>
   );
