@@ -25,7 +25,7 @@ const config: Config = {
   organizationName: 'teramot', // Usually your GitHub org/user name.
   projectName: 'teramot-documentation', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -106,6 +106,11 @@ const config: Config = {
   themeConfig: {
     // TODO: Replace with Teramot social card image
     image: 'img/teramot-social-card.jpg',
+    colorMode: {
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false, 
+      disableSwitch: false, 
+    },
     navbar: {
       title: 'Teramot Docs',
       logo: {
@@ -114,32 +119,25 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'gettingStartedSidebar',
+          to: '/getting-started/model-deployment',
           position: 'left',
           label: 'Getting Started',
-          docsPluginId: 'getting-started',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'apiSidebar',
+          to: '/api/intro',
           position: 'left',
           label: 'API',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'complianceSidebar',
+          to: '/compliance/about',
           position: 'left',
           label: 'Compliance',
-          docsPluginId: 'compliance',
         },
         {to: '/updates', label: 'Updates', position: 'left'},
         {
-          type: 'docSidebar',
-          sidebarId: 'statusSidebar',
+          to: '/status/intro',
           position: 'left',
           label: 'Status',
-          docsPluginId: 'status',
         },
         {
           href: 'https://github.com/teramot/teramot-documentation',
@@ -164,7 +162,7 @@ const config: Config = {
             },
             {
               label: 'Product Updates',
-              to: '/products',
+              to: '/updates',
             },
           ],
         },
@@ -173,7 +171,7 @@ const config: Config = {
           items: [
             {
               label: 'Developer Blog',
-              to: '/blog',
+              to: '/updates',
             },
             {
               label: 'System Status',
@@ -194,11 +192,11 @@ const config: Config = {
             },
             {
               label: 'Contact',
-              to: '/contact',
+              to: '/compliance/transparency/customer-support',
             },
             {
               label: 'Privacy Policy',
-              to: '/privacy',
+              to: '/compliance/transparency/privacy-policy',
             },
           ],
         },

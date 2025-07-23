@@ -34,10 +34,10 @@ function HomepageHeader() {
           <Link className="button button--primary button--lg" to="/getting-started">
             Get Started
           </Link>
-          <Link className="button button--secondary button--lg" to="/api">
+          <Link className="button button--secondary button--lg" to="/api/intro">
             API Reference
           </Link>
-          <Link className="button button--secondary button--lg" to="/products">
+          <Link className="button button--secondary button--lg" to="/updates">
             Product Updates
           </Link>
 
@@ -86,28 +86,28 @@ function DocumentationSections() {
       description: "Full technical documentation for our AI Agent APIs. Query, operate and automate on the Gold Layer—securely, reliably, and at scale.",
       imageUrl: "/img/Data extraction-rafiki.svg",
       buttonText: "Go to API Reference",
-      buttonLink: "/api"
+      buttonLink: "/api/intro"
     },
     {
       title: "Compliance",
       description: "Access all compliance documentation: ISO 27001, SOC2, GDPR and more. Security standards, audit details, and best practices.",
       imageUrl: "/img/Secure Server-cuate.svg",
       buttonText: "Go to Compliance",
-      buttonLink: "/compliance"
+      buttonLink: "/compliance/about"
     },
     {
       title: "Product Updates",
       description: "Read the latest changelogs, feature releases, and technical improvements across the Teramot platform.",
       imageUrl: "/img/Business-Plan-amico.svg",
       buttonText: "Go to Product Updates",
-      buttonLink: "/products"
+      buttonLink: "/updates"
     },
     {
       title: "Service Status",
       description: "Check real-time operational status for Teramot services, APIs and infrastructure.",
       imageUrl: "/img/Data-extraction-bro.svg",
       buttonText: "Go to Service Status",
-      buttonLink: "/status"
+      buttonLink: "/status/intro"
     }
   ];
 
