@@ -104,8 +104,12 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // TODO: Replace with Teramot social card image
     image: 'img/teramot-social-card.jpg',
+    colorMode: {
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false, 
+      disableSwitch: false, 
+    },
     navbar: {
       title: 'Teramot Docs',
       logo: {
@@ -146,6 +150,7 @@ const config: Config = {
           label: 'GitHub',
           position: 'right',
         },
+        
       ],
     },
     footer: {
