@@ -119,7 +119,7 @@ const config: Config = {
       },
       items: [
         {
-          to: '/getting-started/model-deployment',
+          to: '/getting-started/getting-started',
           position: 'left',
           label: 'Getting Started',
         },
@@ -180,8 +180,8 @@ const config: Config = {
               to: '/status/intro',
             },
             {
-              label: 'Support Center',
-              to: '/support',
+              label: 'Help Center',
+              to: '/help',
             },
           ],
         },

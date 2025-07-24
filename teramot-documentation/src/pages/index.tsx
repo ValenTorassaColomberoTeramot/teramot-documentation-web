@@ -118,8 +118,31 @@ function DocumentationSections() {
           {sections.map((section, idx) => (
             <DocumentationSection key={idx} {...section} />
           ))}
-        </div>
-      </div>
+</div>
+</div>
+
+<div style={{ textAlign: 'center', marginTop: '3rem' }}>
+  <Link
+    to="/help"
+    style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '0.5rem',
+      color: '#888',
+      fontSize: '0.95rem',
+      textDecoration: 'none',
+      border: '1px solid #ccc',
+      borderRadius: '8px',
+      padding: '0.5rem 1rem',
+      transition: 'all 0.2s ease',
+    }}
+    onMouseEnter={e => (e.currentTarget.style.borderColor = '#aaa')}
+    onMouseLeave={e => (e.currentTarget.style.borderColor = '#ccc')}
+  >
+    🛟 Need help? Visit the Help Center
+  </Link>
+</div>
+
     </section>
   );
 }
