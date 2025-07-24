@@ -1,42 +1,30 @@
+---
+title: System Status
+sidebar_position: 1
+---
+
+import Admonition from '@theme/Admonition';
+
 # System Status
 
-Monitor the real-time status of all Teramot services and infrastructure.
+Stay informed on the real-time status of all Teramot services and infrastructure.
 
-## Current Status
+<Admonition type="info" title="Status Dashboard Coming Soon">
+A public status page is under development. It will provide transparency about uptime, outages, and incident resolution.
+</Admonition>
 
-All systems are operational. Last updated: [Auto-generated timestamp]
+## Planned Features
 
-## Service Status
+- ✅ Live service indicators (API, Authentication, UI, etc.)
+- 📅 Scheduled maintenance view
+- 📊 Historical uptime and incident log
+- 🔔 Notification subscriptions
+- 📜 SLA metrics
 
-### Core Services
-- API Gateway: ✅ Operational
-- Authentication Service: ✅ Operational
-- Data Processing: ✅ Operational
-- Web Interface: ✅ Operational
+## SLA Commitment
 
-### Infrastructure
-- Database Systems: ✅ Operational
-- CDN: ✅ Operational
-- Monitoring: ✅ Operational
+- **Uptime Guarantee**: 99.9%  
+- **Avg Response Time**: < 200ms  
+- **Incident Recovery Time**: < 30 minutes
 
-## Scheduled Maintenance
-
-No scheduled maintenance at this time.
-
-## Incident History
-
-View past incidents and their resolution details.
-
-## Status Notifications
-
-Subscribe to receive notifications about:
-- Service outages
-- Scheduled maintenance
-- Performance degradation
-- Security incidents
-
-## SLA Information
-
-- Uptime Target: 99.9%
-- Response Time: < 200ms
-- Recovery Time: < 30 minutes
+If you experience service issues in the meantime, contact our support team at [support@teramot.com](mailto:support@teramot.com).

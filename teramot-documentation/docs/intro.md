@@ -1,31 +1,36 @@
 ---
+title: Teramot API Documentation
 sidebar_position: 1
 ---
 
+import Admonition from '@theme/Admonition';
+
 # Teramot API Documentation
 
-Welcome to the API reference for all Teramot products.
+Welcome to the upcoming API reference for all Teramot products.
+
+<Admonition type="info" title="Coming Soon">
+This section will expose our internal tools such as **AutoECL** to developers via a RESTful API and MCP.
+</Admonition>
 
 ## Overview
 
-This section contains comprehensive documentation for all Teramot APIs, including authentication, REST endpoints, webhooks, and SDKs.
+This documentation will include:
 
-## What's Available
-
-- **Authentication**: Learn how to authenticate with Teramot APIs
-- **REST API**: Complete reference for all REST endpoints
-- **Webhooks**: Real-time event notifications
-- **SDKs**: Official software development kits
+- **Authentication**: How to securely connect with Teramot APIs  
+- **REST Endpoints**: Explore the full API specification  
+- **Webhooks**: Get notified about important events  
+- **SDKs**: Language-specific tools to accelerate development
 
 ## Getting Started
 
-To get started with the Teramot API:
+When available, this section will guide you through:
 
-1. **Authentication**: Set up your API credentials
-2. **Choose your integration**: REST API or SDK
-3. **Test your integration**: Use our sandbox environment
-4. **Go live**: Deploy to production
+1. Setting up authentication  
+2. Choosing between REST or SDK-based integration  
+3. Testing your integration in a sandbox  
+4. Launching in production
 
 ## Support
 
-For API support, please contact our developer team or check our status page for any known issues.
+If you're interested in early access or beta testing the API, please contact us at [support@teramot.com](mailto:support@teramot.com).

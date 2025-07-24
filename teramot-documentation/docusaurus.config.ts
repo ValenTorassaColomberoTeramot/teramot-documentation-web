@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Teramot Documentation',
   tagline: 'Technical documentation, compliance materials, and product updates for Teramot',
-  favicon: 'img/favicon-teramot.ico',
+  favicon: '/img/index/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -105,7 +105,7 @@ const config: Config = {
 
   themeConfig: {
     // TODO: Replace with Teramot social card image
-    image: 'img/teramot-social-card.jpg',
+    image: 'img/index/logo.png',
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: false, 
@@ -115,7 +115,7 @@ const config: Config = {
       title: 'Teramot Docs',
       logo: {
         alt: 'Teramot Logo',
-        src: 'img/logo.png',
+        src: 'img/index/logo.png',
       },
       items: [
         {
@@ -140,10 +140,11 @@ const config: Config = {
           label: 'Status',
         },
         {
-          href: 'https://github.com/teramot/teramot-documentation',
-          label: 'GitHub',
+          href: 'https://teramot.com',
+          label: 'Teramot.com',
           position: 'right',
         },
+        
       ],
     },
     footer: {
@@ -154,45 +155,42 @@ const config: Config = {
           items: [
             {
               label: 'API Reference',
-              to: '/api',
+              to: '/api/intro',
+            },
+            {
+              label: 'Getting Started',
+              to: '/getting-started/getting-started',
             },
             {
               label: 'Compliance',
-              to: '/compliance',
+              to: '/compliance/about',
             },
+            
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
             {
               label: 'Product Updates',
               to: '/updates',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Developer Blog',
-              to: '/updates',
-            },
             {
               label: 'System Status',
-              to: '/status',
+              to: '/status/intro',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/teramot/teramot-documentation',
+              label: 'Support Center',
+              to: '/support',
             },
           ],
         },
         {
-          title: 'Company',
+          title: 'Teramot',
           items: [
             {
-              label: 'About Teramot',
-              to: '/compliance/about',
-            },
-            {
-              label: 'Contact',
-              to: '/compliance/transparency/customer-support',
+              label: 'About Us',
+              to: 'https://teramot.com/',
             },
             {
               label: 'Privacy Policy',
@@ -200,9 +198,17 @@ const config: Config = {
             },
           ],
         },
+        
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Teramot, Inc. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} Teramot, Inc. All rights reserved.`,
+      logo: {
+        alt: 'Teramot Logo',
+        src: '/img/index/logo-light.png', 
+        href: 'https://teramot.com',
+        width: 400,
+      },
     },
+    
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
