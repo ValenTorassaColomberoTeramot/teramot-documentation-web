@@ -219,7 +219,7 @@ Pricing is based on:
 
 - **API Reference**: [/api](/api) - Complete API documentation
 - **Compliance**: [/compliance](/compliance) - Security and legal docs
-- **Blog**: [/blog](/blog) - Technical articles and updates
+- **Blog**: [/updates](/updates) - Technical articles and updates
 - **Status**: [/status](/status) - System status and incidents
 
 ### Can I get training for my team?

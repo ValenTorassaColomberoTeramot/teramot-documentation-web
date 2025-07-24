@@ -14,12 +14,12 @@ function HomepageHeader() {
       <div className="container">
         <div className={styles.logoWrapper}>
           <img
-            src="/img/logo-dark.png"
+            src="/img/index/logo-dark.png"
             className={clsx(styles.logoImage, styles.logoImageLight)}
             alt="Teramot Logo"
           />
           <img
-            src="/img/logo-light.png"
+            src="/img/index/logo-light.png"
             className={clsx(styles.logoImage, styles.logoImageDark)}
             alt="Teramot Logo"
           />
@@ -31,13 +31,13 @@ function HomepageHeader() {
           Documentation, integration guides and API reference for scaling AI Agents with Teramot.
         </p>
         <div className={styles.heroButtons}>
-          <Link className="button button--primary button--lg" to="/getting-started">
+          <Link className="button button--primary button--lg" to="/getting-started/getting-started">
             Get Started
           </Link>
-          <Link className="button button--secondary button--lg" to="/api">
+          <Link className="button button--secondary button--lg" to="/api/intro">
             API Reference
           </Link>
-          <Link className="button button--secondary button--lg" to="/products">
+          <Link className="button button--secondary button--lg" to="/updates">
             Product Updates
           </Link>
 
@@ -77,37 +77,37 @@ function DocumentationSections() {
     {
       title: "Getting Started",
       description: "Start integrating your corporate data into Teramot Agents. Step-by-step tutorials for connecting AWS, building your medallion architecture, and unlocking the Gold Layer.",
-      imageUrl: "/img/Chat bot-pana.svg",
+      imageUrl: "/img/index/Chat bot-pana.svg",
       buttonText: "Go to Getting Started",
-      buttonLink: "/getting-started"
+      buttonLink: "/getting-started/getting-started"
     },
     {
       title: "API Reference",
       description: "Full technical documentation for our AI Agent APIs. Query, operate and automate on the Gold Layer—securely, reliably, and at scale.",
-      imageUrl: "/img/Data extraction-rafiki.svg",
+      imageUrl: "/img/index/Data extraction-rafiki.svg",
       buttonText: "Go to API Reference",
-      buttonLink: "/api"
+      buttonLink: "/api/intro"
     },
     {
       title: "Compliance",
       description: "Access all compliance documentation: ISO 27001, SOC2, GDPR and more. Security standards, audit details, and best practices.",
-      imageUrl: "/img/Secure Server-cuate.svg",
+      imageUrl: "/img/index/Secure Server-cuate.svg",
       buttonText: "Go to Compliance",
-      buttonLink: "/compliance"
+      buttonLink: "/compliance/about"
     },
     {
       title: "Product Updates",
       description: "Read the latest changelogs, feature releases, and technical improvements across the Teramot platform.",
-      imageUrl: "/img/Business-Plan-amico.svg",
+      imageUrl: "/img/index/Business-Plan-amico.svg",
       buttonText: "Go to Product Updates",
-      buttonLink: "/products"
+      buttonLink: "/updates"
     },
     {
       title: "Service Status",
       description: "Check real-time operational status for Teramot services, APIs and infrastructure.",
-      imageUrl: "/img/Data-extraction-bro.svg",
+      imageUrl: "/img/index/Data-extraction-bro.svg",
       buttonText: "Go to Service Status",
-      buttonLink: "/status"
+      buttonLink: "/status/intro"
     }
   ];
 
@@ -118,8 +118,31 @@ function DocumentationSections() {
           {sections.map((section, idx) => (
             <DocumentationSection key={idx} {...section} />
           ))}
-        </div>
-      </div>
+</div>
+</div>
+
+<div style={{ textAlign: 'center', marginTop: '3rem' }}>
+  <Link
+    to="/help"
+    style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '0.5rem',
+      color: '#888',
+      fontSize: '0.95rem',
+      textDecoration: 'none',
+      border: '1px solid #ccc',
+      borderRadius: '8px',
+      padding: '0.5rem 1rem',
+      transition: 'all 0.2s ease',
+    }}
+    onMouseEnter={e => (e.currentTarget.style.borderColor = '#aaa')}
+    onMouseLeave={e => (e.currentTarget.style.borderColor = '#ccc')}
+  >
+    🛟 Need help? Visit the Help Center
+  </Link>
+</div>
+
     </section>
   );
 }

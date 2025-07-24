@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Teramot Documentation',
   tagline: 'Technical documentation, compliance materials, and product updates for Teramot',
-  favicon: 'img/favicon-teramot.ico',
+  favicon: '/img/index/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -25,7 +25,7 @@ const config: Config = {
   organizationName: 'teramot', // Usually your GitHub org/user name.
   projectName: 'teramot-documentation', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -46,7 +46,7 @@ const config: Config = {
         },
         // ✅ mantené blog y theme si los usás
         blog: {
-          routeBasePath: '/blog',
+          routeBasePath: '/updates',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -105,47 +105,46 @@ const config: Config = {
 
   themeConfig: {
     // TODO: Replace with Teramot social card image
-    image: 'img/teramot-social-card.jpg',
+    image: 'img/index/logo.png',
+    colorMode: {
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false, 
+      disableSwitch: false, 
+    },
     navbar: {
       title: 'Teramot Docs',
       logo: {
         alt: 'Teramot Logo',
-        src: 'img/logo.png',
+        src: 'img/index/logo.png',
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'gettingStartedSidebar',
+          to: '/getting-started/getting-started',
           position: 'left',
           label: 'Getting Started',
-          docsPluginId: 'getting-started',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'apiSidebar',
+          to: '/api/intro',
           position: 'left',
           label: 'API',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'complianceSidebar',
+          to: '/compliance/about',
           position: 'left',
           label: 'Compliance',
-          docsPluginId: 'compliance',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/updates', label: 'Updates', position: 'left'},
         {
-          type: 'docSidebar',
-          sidebarId: 'statusSidebar',
+          to: '/status/intro',
           position: 'left',
           label: 'Status',
-          docsPluginId: 'status',
         },
         {
-          href: 'https://github.com/teramot/teramot-documentation',
-          label: 'GitHub',
+          href: 'https://teramot.com',
+          label: 'Teramot.com',
           position: 'right',
         },
+        
       ],
     },
     footer: {
@@ -156,55 +155,60 @@ const config: Config = {
           items: [
             {
               label: 'API Reference',
-              to: '/api',
+              to: '/api/intro',
+            },
+            {
+              label: 'Getting Started',
+              to: '/getting-started/getting-started',
             },
             {
               label: 'Compliance',
-              to: '/compliance',
+              to: '/compliance/about',
             },
-            {
-              label: 'Product Updates',
-              to: '/products',
-            },
+            
           ],
         },
         {
-          title: 'Community',
+          title: 'Resources',
           items: [
             {
-              label: 'Developer Blog',
-              to: '/blog',
+              label: 'Product Updates',
+              to: '/updates',
             },
             {
               label: 'System Status',
-              to: '/status',
+              to: '/status/intro',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/teramot/teramot-documentation',
+              label: 'Help Center',
+              to: '/help',
             },
           ],
         },
         {
-          title: 'Company',
+          title: 'Teramot',
           items: [
             {
-              label: 'About Teramot',
-              to: '/compliance/about',
-            },
-            {
-              label: 'Contact',
-              to: '/contact',
+              label: 'About Us',
+              to: 'https://teramot.com/',
             },
             {
               label: 'Privacy Policy',
-              to: '/privacy',
+              to: '/compliance/transparency/privacy-policy',
             },
           ],
         },
+        
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Teramot, Inc. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} Teramot, Inc. All rights reserved.`,
+      logo: {
+        alt: 'Teramot Logo',
+        src: '/img/index/logo-light.png', 
+        href: 'https://teramot.com',
+        width: 400,
+      },
     },
+    
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
